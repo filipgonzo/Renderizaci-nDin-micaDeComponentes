@@ -9,28 +9,29 @@ import Col from "react-bootstrap/Col";
 
 function App() {
   const [lstColaboradores, setLstColaboradores] = useState(BaseColaboradores);
-
+  const [valorDeLaCaja, setValorDeLaCaja] = useState('');
+  
   return (
-    <Container>
-      <Buscador/>
-      <Row>
-        <Col>
-          <div className="App">
-            
-
+    <div className="App">
+      <Container>
+        <Buscador
+          setValorDeLaCaja={setValorDeLaCaja}
+        />
+        <Row>
+          <Col>
             <Formulario
               lstColaboradores={lstColaboradores}
               setLstColaboradores={setLstColaboradores}
             />
 
             <ListaColaboradores
+              valorDeLaCaja={valorDeLaCaja}
               lstColaboradores={lstColaboradores}
-              setLstColaboradores={setLstColaboradores}
             />
-          </div>
-        </Col>
-      </Row>
-    </Container>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }
 

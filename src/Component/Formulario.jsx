@@ -1,18 +1,15 @@
-import React from "react";
-import { useState } from "react";
-
+import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const Formulario = ({lstColaboradores, setLstColaboradores}) => {
     
-    const [nombre, setNombre] = useState('');
-
-    const [email, setEmail] = useState('');
+    const [nombre, setNombre] = useState('')
+    const [email, setEmail] = useState('')
 
     const agregarColaborador = (e) =>{
         e.preventDefault();
-        setLstColaboradores([...lstColaboradores,{ nombre: nombre, correo: email}]);
+        setLstColaboradores([...lstColaboradores, { nombre: nombre, correo: email}]);
     }
 
   return (
